@@ -53,12 +53,11 @@ public class MergeRequestAction extends AbstractMergeAction {
 
         GitCommandResult result = gitFlowPlus.getLocalLastCommit(repository, currentBranch);
         String[] msgs = result.getOutputAsJoinedString().split("-body:");
-        MergeRequestDialog mergeRequestDialog = new MergeRequestDialog(project, msgs[0], msgs[1]);
+        MergeRequestDialog mergeRequestDialog = new MergeRequestDialog(project, msgs.length > 1 ? msgs[0] : "", msgs.length > 2 ? msgs[1] : "");
         mergeRequestDialog.show();
         if (!mergeRequestDialog.isOK()) {
             return;
         }
-
 
         new Task.Backgroundable(project, "Merge Request", false) {
             @Override
