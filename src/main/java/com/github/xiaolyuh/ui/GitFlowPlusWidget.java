@@ -30,6 +30,7 @@ import com.intellij.ui.ClickListener;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.popup.PopupFactoryImpl;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -141,5 +142,11 @@ public class GitFlowPlusWidget extends EditorBasedWidget implements StatusBarWid
     @Override
     public String ID() {
         return GitFlowPlusWidget.class.getName();
+    }
+
+    @Nullable
+    @Override
+    public WidgetPresentation getPresentation(@NotNull PlatformType type) {
+        return null;
     }
 }
