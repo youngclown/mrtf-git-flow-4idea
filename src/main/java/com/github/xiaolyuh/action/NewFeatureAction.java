@@ -21,7 +21,8 @@ import java.util.Objects;
 public class NewFeatureAction extends AbstractNewBranchAction {
 
     public NewFeatureAction() {
-        super("新建开发分支", "新建开发分支，并推送到远程仓库", IconLoader.getIcon("/icons/feature.svg", Objects.requireNonNull(ReflectionUtil.getGrandCallerClass())));
+        super("새로운 개발 지점", "새 개발 브랜치를 생성하고 원격웨어 하우스로 푸시",
+                IconLoader.getIcon("/icons/feature.svg", Objects.requireNonNull(ReflectionUtil.getGrandCallerClass())));
     }
 
     @Override
